@@ -1349,8 +1349,8 @@ footer {
   .nav-links a { padding: 0.75rem 0; color: var(--gray-800) !important; border-bottom: 1px solid var(--gray-200); width: 100%; }
   .nav-links a:last-child { border-bottom: none; }
   .nav-toggle { display: flex; }
-  #navbar { position: relative; }
-  #navbar.scrolled { position: fixed; }
+  #navbar:not(.scrolled) { background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, transparent 100%); }
+  .nav-logo-img { filter: drop-shadow(0 1px 6px rgba(0,0,0,0.6)); }
 
   .menu-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .about-features { grid-template-columns: 1fr; }
