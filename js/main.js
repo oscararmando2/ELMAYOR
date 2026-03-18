@@ -113,6 +113,12 @@
     hoursRow.classList.add('hours-today');
   }
 
+  /* ─── Current day highlight in specials ───────────────────── */
+  const todayCard = document.querySelector(`.special-card[data-day="${today}"]`);
+  if (todayCard) {
+    todayCard.classList.add('today');
+  }
+
   /* ─── Contact form submit ──────────────────────────────────── */
   const contactForm = document.getElementById('contact-form');
 
