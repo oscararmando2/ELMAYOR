@@ -119,6 +119,39 @@
     todayCard.classList.add('today');
   }
 
+  /* ─── Tomorrow's special preview ──────────────────────────── */
+  const specials = [
+    { day: 'sunday',    name: 'Mole Sunday',       desc: 'Slow-cooked mole negro over chicken with rice & homemade tortillas.', original: '$26',   price: '$18', savings: 'Save $8'   },
+    { day: 'monday',    name: 'Taco Monday',        desc: 'Any 3 tacos + chips & salsa. Mix & match freely.',                   original: '$18',   price: '$12', savings: 'Save $6'   },
+    { day: 'tuesday',   name: 'Taco Tuesday',       desc: 'Street tacos 2 for $5 all day. Beef, chicken, or veggie.',           original: '$5 ea', price: '2/$5', savings: 'Best Deal' },
+    { day: 'wednesday', name: 'Enchilada Night',    desc: '3 enchiladas, rice, beans & complimentary agua fresca.',             original: '$22',   price: '$15', savings: 'Save $7'   },
+    { day: 'thursday',  name: 'Margarita Thursday', desc: 'House margaritas $6 all evening. Classic, strawberry, or mango.',   original: '$14',   price: '$6',  savings: 'Save $8'   },
+    { day: 'friday',    name: 'Fiesta Friday',      desc: 'Family combo for 4 — tacos, enchiladas, rice & beans + dessert.',   original: '$75',   price: '$55', savings: 'Save $20'  },
+    { day: 'saturday',  name: 'Weekend Brunch',     desc: 'Chilaquiles, huevos rancheros & bottomless horchata. 10 AM–2 PM.',  original: '$28',   price: '$18', savings: 'Save $10'  }
+  ];
+
+  function escText(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  const tomorrowPreview = document.getElementById('specials-tomorrow');
+  if (tomorrowPreview) {
+    const todayIndex   = new Date().getDay(); // 0=Sun … 6=Sat
+    const tomorrowData = specials[(todayIndex + 1) % 7];
+    const dayLabel     = tomorrowData.day.charAt(0).toUpperCase() + tomorrowData.day.slice(1);
+    tomorrowPreview.innerHTML = `
+      <p class="specials-tomorrow-label">Tomorrow: ${escText(dayLabel)}</p>
+      <p class="specials-tomorrow-name">${escText(tomorrowData.name)}</p>
+      <p class="specials-tomorrow-desc">${escText(tomorrowData.desc)}</p>
+      <p class="specials-tomorrow-prices"><s>${escText(tomorrowData.original)}</s> → ${escText(tomorrowData.price)}</p>
+      <span class="specials-tomorrow-savings">${escText(tomorrowData.savings)}</span>
+    `;
+  }
+
   /* ─── Contact form submit ──────────────────────────────────── */
   const contactForm = document.getElementById('contact-form');
 
