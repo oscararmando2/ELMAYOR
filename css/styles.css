@@ -768,12 +768,12 @@ ul {
 }
 
 .specials-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem;
+  display: flex;
+  justify-content: center;
 }
 
 .special-card {
+  display: none;
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -781,6 +781,8 @@ ul {
   border: 1px solid var(--gray-200);
   transition: all var(--transition);
   cursor: pointer;
+  width: 100%;
+  max-width: 420px;
 }
 
 .special-card:hover {
@@ -824,6 +826,7 @@ ul {
 }
 
 .special-card.today {
+  display: block;
   border-color: var(--green);
   box-shadow: 0 0 0 3px rgba(0,115,41,0.15);
 }
@@ -888,6 +891,68 @@ ul {
 .specials-cta {
   text-align: center;
   margin-top: 3.5rem;
+}
+
+/* ─── Tomorrow's special teaser ────────────────────────────── */
+.specials-tomorrow-preview {
+  margin: 1.75rem auto 0;
+  max-width: 420px;
+  background: var(--gray-100);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border: 1px solid var(--gray-200);
+}
+
+.specials-tomorrow-preview:empty {
+  display: none;
+}
+
+.specials-tomorrow-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-600);
+  margin-bottom: 0.25rem;
+}
+
+.specials-tomorrow-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 0.2rem;
+}
+
+.specials-tomorrow-desc {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.specials-tomorrow-prices {
+  font-size: 0.82rem;
+  color: var(--gray-800);
+  font-weight: 600;
+}
+
+.specials-tomorrow-prices s {
+  font-weight: 400;
+  color: var(--gray-600);
+}
+
+.specials-tomorrow-savings {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  background: var(--green);
+  padding: 2px 8px;
+  border-radius: 100px;
+  margin-top: 0.3rem;
 }
 
 /* ─── Hours & Location ──────────────────────────────────────── */
@@ -1330,7 +1395,6 @@ footer {
 /* ─── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .menu-grid { grid-template-columns: repeat(2, 1fr); }
-  .specials-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1338,7 +1402,6 @@ footer {
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-img-accent { display: none; }
   .about-badge { top: 12px; left: 12px; }
-  .specials-grid { grid-template-columns: repeat(2, 1fr); }
   .location-grid { grid-template-columns: 1fr; }
   .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
 }
@@ -1354,7 +1417,6 @@ footer {
 
   .menu-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
   .about-features { grid-template-columns: 1fr; }
-  .specials-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
 
@@ -1370,7 +1432,6 @@ footer {
   .menu-card-body { padding: 1.25rem; }
   .location-card { padding: 1.75rem; }
   .contact-form-card { padding: 1.75rem; }
-  .specials-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
 }
 
 /* ─── Accessibility ─────────────────────────────────────────── */
