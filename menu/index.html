@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Mayor Mexican Restaurant — Full Menu" />
+  <meta name="theme-color" content="#007329" />
+  <title>Menu | El Mayor Mexican Restaurant</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:    #007329;
+      --green-dk: #005a1e;
+      --white:    #FFFFFF;
+      --red:      #D82215;
+      --off-white:#faf9f6;
+    }
+
+    body {
+      background: var(--off-white);
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      min-height: 100vh;
+    }
+
+    /* ── Top bar ─────────────────────────────────────────── */
+    .menu-header {
+      background: var(--green);
+      color: var(--white);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+
+    .menu-header a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      opacity: .85;
+      transition: opacity .2s;
+    }
+    .menu-header a:hover { opacity: 1; }
+
+    .menu-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    /* ── Content ─────────────────────────────────────────── */
+    .menu-page {
+      max-width: 860px;
+      margin: 40px auto;
+      padding: 0 16px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .menu-page img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.12);
+      background: #fff;
+    }
+
+    /* ── Footer link ─────────────────────────────────────── */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--green);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0,115,41,.35);
+      transition: background .2s, box-shadow .2s, transform .15s;
+      margin-top: 8px;
+    }
+    .back-btn:hover {
+      background: var(--green-dk);
+      box-shadow: 0 6px 20px rgba(0,115,41,.45);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 600px) {
+      .menu-header h1 { font-size: 1.1rem; }
+      .menu-page { margin: 24px auto; gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="menu-header">
+    <a href="../" aria-label="Back to home">← Back</a>
+    <h1>Our Menu</h1>
+    <span style="width:72px"></span><!-- spacer to centre h1 -->
+  </header>
+
+  <main class="menu-page">
+    <img src="../MENU1.png" alt="El Mayor full menu page 1 — tacos, entrées, drinks, and more with prices" />
+    <img src="../MENU2.png" alt="El Mayor full menu page 2 — additional dishes, desserts, and beverages with prices" />
+    <a href="../" class="back-btn">← Back to Home</a>
+  </main>
+
+</body>
+</html>
